@@ -5,18 +5,18 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: guestbook
+      app: demoweb
       tier: frontend
   replicas: {{ .Values.replicas }}
   template:
     metadata:
       labels:
-        app: guestbook
+        app: demoweb
         tier: frontend
     spec:
       containers:
-      - name: php-redis
-        image: gcr.io/google-samples/gb-frontend:v4
+      - name: demoweb
+        image: docker.io/15141514/demoweb:1.0
         resources:
           requests:
             cpu: 100m
