@@ -15,7 +15,7 @@ spec:
         tier: asdf
     spec:
       containers:
-      - name: php-redis
+      - name: asdf
         image: yugabytedb/yugabyte:latest
         resources:
           requests:
@@ -23,7 +23,5 @@ spec:
             memory: 100Mi
         ports:
         - containerPort: 7000
-        - containerPort: 9000
-        - containerPort: 5433
-        - containerPort: 9042
+
  
