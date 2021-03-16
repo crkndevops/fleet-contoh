@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webmin
+spec:
+  selector:
+    matchLabels:
+      app: webmin
+      tier: webmin
+  replicas: {{ .Values.replicas }}
+  template:
+    metadata:
+      labels:
+        app: webmin
+        tier: webmin
+    spec:
+      containers:
+      - name: webmin
+        image: johanp/webmin:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 10000

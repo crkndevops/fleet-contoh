@@ -1,0 +1,26 @@
+namespace: fleet-mc-helm-example
+targetCustomizations:
+- name: dev
+  helm:
+    values:
+      replication: false
+  clusterSelector:
+    matchLabels:
+      env: dev
+
+- name: webmin
+  helm:
+    values:
+      replicas: 2
+  clusterSelector:
+    matchLabels:
+      env: webmin
+
+- name: prod
+  helm:
+    values:
+      serviceType: LoadBalancer
+      replicas: 2
+  clusterSelector:
+    matchLabels:
+      env: prod
