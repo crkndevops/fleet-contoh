@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
+  name: test
 spec:
   selector:
     matchLabels:
       app: demoweb
-      tier: frontend
+      tier: test
   replicas: {{ .Values.replicas }}
   template:
     metadata:
       labels:
         app: demoweb
-        tier: frontend
+        tier: test
     spec:
       containers:
       - name: demoweb
-        image: docker.io/15141514/demoweb:1.0
+        image: adolfintel/speedtest:latest
         resources:
           requests:
             cpu: 100m
