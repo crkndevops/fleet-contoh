@@ -8,19 +8,19 @@ targetCustomizations:
     matchLabels:
       env: dev
 
-- name: webmin
+- name: test
   helm:
     values:
-      replicas: 2
+      replicas: 3
   clusterSelector:
     matchLabels:
-      env: webmin
+      env: test
 
 - name: prod
   helm:
     values:
       serviceType: LoadBalancer
-      replicas: 2
+      replicas: 1
   clusterSelector:
     matchLabels:
       env: prod

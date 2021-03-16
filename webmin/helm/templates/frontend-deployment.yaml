@@ -5,13 +5,13 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: webmin
+      app: testingwebmin
       tier: webmin
   replicas: {{ .Values.replicas }}
   template:
     metadata:
       labels:
-        app: webmin
+        app: testingwebmin
         tier: webmin
     spec:
       containers:

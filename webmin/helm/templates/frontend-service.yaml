@@ -3,12 +3,12 @@ kind: Service
 metadata:
   name: webmin
   labels:
-    app: webmin
+    app: testingwebmin
     tier: webmin
 spec:
   type: "{{ .Values.serviceType }}"
   ports:
   - port: 10000
   selector:
-    app: webmin
+    app: testingwebmin
     tier: webmin
