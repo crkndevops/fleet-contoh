@@ -8,13 +8,13 @@ targetCustomizations:
     matchLabels:
       env: dev
 
-- name: test
+- name: test1
   helm:
     values:
-      replicas: 3
+      replicas: 1
   clusterSelector:
     matchLabels:
-      env: test
+      env: test1
 
 - name: prod
   helm:

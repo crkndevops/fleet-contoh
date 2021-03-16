@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: demoweb
+  name: demowae
   labels:
-    app: demoweb
-    tier: test
+    app: demowae
+    tier: test1
 spec:
   type: "{{ .Values.serviceType }}"
   ports:
   - port: 80
   selector:
-    app: demoweb
-    tier: test
+    app: demowae
+    tier: test1

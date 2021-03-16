@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test
+  name: test1
 spec:
   selector:
     matchLabels:
-      app: demoweb
-      tier: test
+      app: demowae
+      tier: test1
   replicas: {{ .Values.replicas }}
   template:
     metadata:
       labels:
-        app: demoweb
-        tier: test
+        app: demowae
+        tier: test1
     spec:
       containers:
-      - name: demoweb
-        image: adolfintel/speedtest:latest
+      - name: demowae
+        image: docker.io/15141514/demoweb:1.0
         resources:
           requests:
             cpu: 100m
