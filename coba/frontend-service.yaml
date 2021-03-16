@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: asdf
+  labels:
+    app: asdf
+    tier: asdf
+spec:
+  type: NodePort
+  ports:
+    - containerPort: 7000
+    - containerPort: 9000
+    - containerPort: 5433
+    - containerPort: 9042
+  selector:
+    app: asdf
+    tier: asdf

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: asdf
+spec:
+  selector:
+    matchLabels:
+      app: asdf
+      tier: asdf
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: asdf
+        tier: asdf
+    spec:
+      containers:
+      - name: php-redis
+        image: yugabytedb/yugabyte:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 7000
+        - containerPort: 9000
+        - containerPort: 5433
+        - containerPort: 9042
+ 
