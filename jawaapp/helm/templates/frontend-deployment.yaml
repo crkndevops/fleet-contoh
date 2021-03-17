@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jawaapp
+spec:
+  selector:
+    matchLabels:
+      app: demo
+      tier: jawaapp
+  replicas: {{ .Values.replicas }}
+  template:
+    metadata:
+      labels:
+        app: demo
+        tier: jawaapp
+    spec:
+      containers:
+      - name: demo
+        image: docker.io/15141514/demoweb:1.0
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 80

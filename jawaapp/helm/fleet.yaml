@@ -1,0 +1,26 @@
+namespace: default
+targetCustomizations:
+- name: dev
+  helm:
+    values:
+      replication: false
+  clusterSelector:
+    matchLabels:
+      env: dev
+
+- name: jawaapp
+  helm:
+    values:
+      replicas: 3
+  clusterSelector:
+    matchLabels:
+      env: jawaapp
+
+- name: prod
+  helm:
+    values:
+      serviceType: LoadBalancer
+      replicas: 3
+  clusterSelector:
+    matchLabels:
+      env: prod
