@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: all-cloud
+  name: allcloud
 spec:
   selector:
     matchLabels:
-      app: webmin
-      tier: all-cloud
+      app: demo
+      tier: allcloud
   replicas: {{ .Values.replicas }}
   template:
     metadata:
       labels:
-        app: webmin
-        tier: all-cloud
+        app: demo
+        tier: allcloud
     spec:
       containers:
-      - name: all-cloud
-        image: ohanp/webmin:latest
+      - name: demo
+        image: johanp/webmin:latest
         resources:
           requests:
             cpu: 100m
