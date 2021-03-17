@@ -5,17 +5,17 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: demo
+      app: demoweb
       tier: jawaapp
   replicas: {{ .Values.replicas }}
   template:
     metadata:
       labels:
-        app: demo
+        app: demoweb
         tier: jawaapp
     spec:
       containers:
-      - name: demo
+      - name: demoweb
         image: docker.io/15141514/demoweb:1.0
         resources:
           requests:
